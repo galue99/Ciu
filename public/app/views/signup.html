@@ -1,0 +1,103 @@
+<div id="content">
+    <div class="form-container">
+        <div id="tmm-form-wizard" class="container substrate">
+
+            <div class="row stage-container">
+                <div class="stage tmm-current col-md-2 col-sm-2">
+                    <div class="stage-header head-icon head-icon-lock"></div>
+                    <div class="stage-content">
+                        <h3 class="stage-title">Creación de la Cuenta</h3>
+                    </div>
+                </div><!--/ .stage-->
+                <div class="stage col-md-2 col-sm-2">
+                    <div class="stage-header head-icon head-icon-user"></div>
+                    <div class="stage-content">
+                        <h3 class="stage-title"></h3>
+                    </div>
+                </div><!--/ .stage-->
+                <div class="stage col-md-2 col-sm-2">
+                    <div class="stage-header head-icon head-icon-details"></div>
+                    <div class="stage-content">
+                        <h3 class="stage-title"></h3>
+                    </div>
+                </div><!--/ .stage-->
+                <div class="stage col-md-2 col-sm-2">
+                    <div class="stage-header head-icon head-icon-payment"></div>
+                    <div class="stage-content">
+                        <h3 class="stage-title"></h3>
+                    </div>
+                </div><!--/ .stage-->
+                <div class="stages col-md-2 col-sm-2">
+                    <div class="stage-header head-icon head-icon-lock"></div>
+                    <div class="stage-content">
+                        <h3 class="stage-title"></h3>
+                        <div class="stage-info">
+                        </div>
+                    </div>
+                </div><!--/ .stage-->
+            </div><!--/ .row-->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-header">
+                        <div class="form-title form-icon title-icon-lock">
+                            <strong>Información de la Cuenta</strong> </div>
+                    </div><!--/ .form-header-->
+                </div>
+            </div><!--/ .row-->
+            <form role="form" name="formUser" id="formulario" novalidate>
+                <div class="form-wizard">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-group"
+                                 ng-class="{ 'has-error' : formUser.username.$invalid && !formUser.username.$pristine && submitted }">
+                                <label for="username">Usuario</label>
+                                <input value="" data-ng-model="user.username" class="text-input" type="text" name="username" id="username" placeholder="Usuario" required/>
+                                <p data-ng-show="formUser.username.$error.required && submitted" class="help-block error-message">
+                                    * Este campo es requerido.
+                                </p>
+                            </div><!--/ .input-login-->
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-group"
+                                 ng-class="{ 'has-error' : formUser.password.$invalid && !formUser.password.$pristine && submitted }">
+                                <label for="password">Contraseña</label>
+                                <input type="password" data-ng-model="user.password" data-ng-model="formUser.password" id="password" name="password" placeholder="Contraseña" class="" required/>
+                                <p data-ng-show="formUser.password.$error.required && submitted" class="help-block error-message">
+                                    * Este campo es requerido.
+                                </p>
+                            </div><!--/ .input-password-->
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-group"
+                                      ng-class="{ 'has-error' : formUser.repeat_password.$invalid && !formUser.repeat_password.$pristine && submitted }">
+                                <label for="pass-confirm">Confirmar contraseña</label>
+                                <input type="password" data-ng-model="user.repeat_password" name="repeat_password" id="pass-confirm" placeholder="Repetir-contraseña" class="" required/>
+                                <p data-ng-show="formUser.repeat_password.$error.required && submitted" class="help-block error-message">
+                                    * Este campo es requerido.
+                                </p>
+                            </div><!--/ .input-conf-password-->
+                        </div>
+                        <div class="col-md-6 col-sm-6"
+                             ng-class="{ 'has-error' : formUser.email.$invalid && !formUser.email.$pristine && submitted }">
+                            <div class="form-group">
+                                <label for="email">Correo electronico</label>
+                                <input placeholder="  Email" data-ng-model="user.email" class="text-input" type="text" name="email" id="email" required />
+                                <p data-ng-show="formUser.email.$error.required && submitted" class="help-block error-message">
+                                    * Este campo es requerido.
+                                </p>
+                            </div><!--/ .input-email-->
+                        </div>
+                    </div><!--/ .row-->
+                </div><!--/ .form-wizard-->
+                <div class="prev">
+                    <a class="button button-control" ui-sref="main" href="#"><span>Prev Step <b>Account Information</b></span></a>
+                    <div class="button-divider"></div>
+                </div>
+                <div class="next">
+                    <button class="button button-control" type="button" data-ng-click="submit(formUser)"><span>Siguiente <b>Información personal</b></span></button>
+                    <div class="button-divider"></div>
+                </div>
+            </form><!--/ .form-wizard-->
+        </div><!--/ .container-->
+    </div><!--/ .form-container-->
+</div><!--/ #content-->

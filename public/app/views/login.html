@@ -1,0 +1,74 @@
+<!-- - - - - - - - - - - - - Content - - - - - - - - - - - - -  -->
+<div class="row stage-container">
+    <div class="col-xs-12">
+        <h2>Bienvenidos al Sistema de Inscripción</h2>
+    </div>
+</div><!--/ .row-->
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="form-header">
+            <div class="form-title form-icon title-icon-lock">
+                <b>Estimado Participante; Bienvenido al proceso de Inscripción online de CIU.</b>
+            </div>
+
+        </div><!--/ .form-header-->
+    </div>
+</div><!--/ .row-->
+
+<div class="form-wizard">
+    <div class="row">
+        <div class="col-md-6 col-sm-6">
+            <h3></h3>
+            <div class="col-md-12 col-sm-12 text-center">
+                <div id="Accordion1" class="Accordion" tabindex="0">
+                    <div class="AccordionPanel">
+                        <div class="AccordionPanelTab"><strong>I. Si usted es un estudiante nuevo y no se ha registrado proceda como sigue:</strong></div>
+                        <div class="AccordionPanelContent">
+                            <li class="AccordionPanelOpen">Regístrese pulsando en el botón correspondiente a la derecha.</li>
+                            <li class="AccordionPanelOpen">Seleccione un  usuario y una contraseña en la pantalla que aparece</li>
+                            <li class="AccordionPanelOpen">Guárdelas en lugar seguro. Las va a necesitar  para ingresar a sus cursos y Portal del Estudiante</li>
+                            <li class="AccordionPanelOpen">Continúe completando el proceso de inscripción.</li>
+                        </div>
+                    </div>
+                    <div class="AccordionPanel">
+                        <div class="AccordionPanelTab"><strong>II. Si se ha registrado antes en el sistema pero no completó el proceso, proceda  así: </strong></div>
+                        <div class="AccordionPanelContent">
+                            <li>Coloque el correo y la contraseña que registro cuando ingresó por  primera vez</li>
+                            <li>Presione el botón Entrar en el lado  derecho</li>
+                            <li>El sistema lo &ldquo;recordará&rdquo; y  llevará al lugar donde lo dejó antes.</li>
+                            <li>Termine el proceso de inscripción.</li>
+                        </div>
+                    </div>
+                </div>
+                <p class="btn-sm" style="text-align:justify;">&nbsp;</p>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+            <h3>Inicio de Sessión</h3>
+            <div class="col-md-12 col-sm-12">
+                <form name="loginForm" novalidate>
+                    <fieldset class="input-block">
+                        <label for="username">Correo Electrónico</label>
+                        <input data-ng-model="login.email" class="validate[required,custom[email]] text-input" type="text" name="username" id="username" placeholder="Correo Electrónico" required/>
+                    </fieldset><!--/ .input-login-->
+                    <fieldset class="input-block">
+                        <label for="username">Contraseña</label>
+                        <input data-ng-model="login.password" class="validate[required] text-input" type="password" name="password" id="password" placeholder="Contraseña" required />
+                    </fieldset><!--/ .input-login-->
+                    <div class="text-right">
+                        <input type="submit" name="" value="Entrar" class="text-right btn btn-primary" data-ng-click="login()">
+                        <input type="button" name="" value="Registrarse" ui-sref="signup" class="text-right btn btn-success">
+                        <input type="button" name="" value="Recuperar" onclick="window.location.href='recuperar_password/'" class="text-right btn btn-warning">
+                    </div><!--/ .input-login-->
+                </form>
+            </div>
+            <br>
+            <div class="col-md-12 col-sm-12 alert alert-danger" role="alert"></div>
+        </div>
+    </div><!--/ .row-->
+</div><!--/ .form-wizard-->
+</div><!--/ .container-->
+
+</div><!--/ .form-container-->
+
