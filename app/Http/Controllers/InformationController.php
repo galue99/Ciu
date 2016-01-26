@@ -94,6 +94,25 @@ class InformationController extends Controller
             // Do your stuff here.
             // send back to the page with success message
 
+            $information->name                    = $request->input('name');
+            $information->lastname                = $request->input('lastname');
+            $information->dni                     = $request->input('dni');
+            $information->genere                  = $request->input('genere');
+            $information->address                 = $request->input('address');
+            $information->country                 = $request->input('country');
+            $information->state                   = $request->input('state');
+            $information->city                    = $request->input('city');
+            $information->phone                   = $request->input('phone');
+            $information->cellphone               = $request->input('cellphone');
+            $information->country_s               = $request->input('country_s');
+            $information->state_s                 = $request->input('state_s');
+            $information->training_area           = $request->input('training_area');
+            $information->specialty               = $request->input('specialty');
+            $information->academy_degree_obtained = $request->input('academy_degree_obtained');
+            $information->senior_year             = $request->input('senior_year');
+            $information->user_id                 = $request->input('user_id');
+            $information->save();
+
             return Response::json([
                 'Success' => [
                     'message'     => 'Record Save Exits',
@@ -101,10 +120,6 @@ class InformationController extends Controller
                 ]
             ], 200);
         }
-
-        $information->save(Input::all());
-
-        return 'Information record successfully created with id ' . $information;
     }
 
     /**

@@ -17,12 +17,8 @@ class UserController extends Controller
      *
      * @return Response
      */
-    public function index($id = null) {
-        if ($id == null) {
-            return User::orderBy('id', 'asc')->get();
-        } else {
-            return $this->show($id);
-        }
+    public function index() {
+        return User::all();
     }
 
     /**
@@ -44,9 +40,9 @@ class UserController extends Controller
         ];
 
         $rules = [
-            'username'   => 'required|integer|min:1|max:3',
-            'email' => 'required|integer|min:1|max:3',
-            'password'    => 'required|integer|min:1|max:3',
+            'username' => 'required|unique:users',
+            'email' => 'required|email|unique:users',
+            'password' => 'required',
         ];
 
         $validator = Validator::make($postData, $rules, $messages);
@@ -63,6 +59,10 @@ class UserController extends Controller
         }else{
             // Do your stuff here.
             // send back to the page with success message
+            $user->username = $request->input('username');
+            $user->email    = $request->input('email');
+            $user->password = $request->input('password');
+            $user->save();
 
             return Response::json([
                 'Success' => [
@@ -72,9 +72,6 @@ class UserController extends Controller
             ], 200);
         }
 
-        $registration->save(Input::all());
-
-        return 'Registration record successfully created with id ' . $registration;
     }
 
     /**

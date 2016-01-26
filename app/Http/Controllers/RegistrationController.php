@@ -66,6 +66,11 @@ class RegistrationController extends Controller
         }else{
             // Do your stuff here.
             // send back to the page with success message
+            $registration->program = $request->input('program');
+            $registration->specialty = $request->input('specialty');
+            $registration->period = $request->input('period');
+            $registration->user_id = $request->input('user_id');
+            $registration->save();
 
             return Response::json([
                 'Success' => [
@@ -74,10 +79,6 @@ class RegistrationController extends Controller
                 ]
             ], 200);
         }
-
-        $registration->save(Input::all());
-
-        return 'Registration record successfully created with id ' . $registration;
     }
 
     /**

@@ -35,22 +35,9 @@ Route::group(['prefix' => 'api'], function()
 /*
 Route::group(array('before' => 'auth'), function()
 {*/
-    Route::get('/api/v1/user/', 'PersonController@index');
-    Route::post('/api/v1/user/', 'PersonController@store');
-    Route::post('/api/v1/user/{id}', 'PersonController@update');
-    Route::delete('/api/v1/user/{id}', 'PersonController@destroy');
-    Route::get('/api/v1/person/', 'PersonController@index');
-    Route::post('/api/v1/person/', 'PersonController@store');
-    Route::post('/api/v1/person/{id}', 'PersonController@update');
-    Route::delete('/api/v1/person/{id}', 'PersonController@destroy');
-    Route::get('/api/v1/information/{id?}', 'InformationController@index');
-    Route::post('/api/v1/information', 'InformationController@store');
-    Route::post('/api/v1/information/{id}', 'InformationController@update');
-    Route::delete('/api/v1/information/{id}', 'InformationController@destroy');
-    Route::get('/api/v1/registration/{id?}', 'RegistrationController@index');
-    Route::post('/api/v1/registration', 'RegistrationController@store');
-    Route::post('/api/v1/registration/{id}', 'RegistrationController@update');
-    Route::delete('/api/v1/registration/{id}', 'RegistrationController@destroy');
+    Route::Resource('/api/v1/user/', 'UserController');
+    Route::Resource('/api/v1/information', 'InformationController');
+    Route::Resource('/api/v1/registration', 'RegistrationController');
     Route::get('/api/v1/pdf', 'PdfController@index');
 /*
 });
